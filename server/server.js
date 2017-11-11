@@ -35,7 +35,7 @@ app.get('/todos',(req,resp)=>{
 app.get('/todos/:id',(req,res)=>{
     var id=req.params.id;
 
-    if (!ObjectID.isValid(id) || id===undefined) {
+    if (!ObjectID.isValid(id)) {
         res.status(404).send()
     } else {
         User.findById(id).then((user) => {
